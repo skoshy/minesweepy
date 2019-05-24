@@ -1,4 +1,4 @@
-/* tslint:disable no-var-requires */
+/* eslint-disable @typescript-eslintno-var-requires */
 const withReadme = (require("storybook-readme/with-readme") as any).default;
 const BlogPaginationReadme = require("./README.md");
 
@@ -8,8 +8,8 @@ import { action } from "@storybook/addon-actions";
 import { withKnobs, number } from "@storybook/addon-knobs";
 import BlogPagination from "./BlogPagination";
 
-const LinkStub = ((props: any) =>
-  <div {...props} onClick={action(props.to.toString())} >{props.children}</div>) as any;
+const LinkStub = (props: any) =>
+  <div {...props} onClick={action(props.to.toString())} >{props.children}</div>;
 
 storiesOf("BlogPagination", module)
   .addDecorator(withReadme(BlogPaginationReadme))

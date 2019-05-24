@@ -16,15 +16,15 @@ interface BlogPostProps extends LayoutProps {
   };
 }
 
-const BlogPostPage = (props: BlogPostProps) => {
+const BlogPostPage = (props: BlogPostProps): JSX.Element => {
   const { frontmatter, html, timeToRead } = props.data.post;
   const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
 
   const tags = props.data.post.frontmatter.tags
-    .map((tag) => <Label key={tag}><Link to={`/blog/tags/${tag}/`}>{tag}</Link></Label>);
+    .map((tag): JSX.Element => <Label key={tag}><Link to={`/blog/tags/${tag}/`}>{tag}</Link></Label>);
 
   const recents = props.data.recents.edges
-    .map(({ node }) => {
+    .map(({ node }): JSX.Element => {
       const recentAvatar = node.frontmatter.author.avatar.children[0] as ImageSharp;
       const recentCover = get(node, "frontmatter.image.children.0.fixed", {});
       const extra = (
