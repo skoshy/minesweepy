@@ -47,7 +47,7 @@ const BlogPage = (props: BlogProps) => {
                 </Comment.Author>
                 <Comment.Metadata style={{ margin: 0 }}>
                   {frontmatter.updatedDate} - {timeToRead} min read
-              </Comment.Metadata>
+                </Comment.Metadata>
               </Comment.Content>
             </Comment>
           </Comment.Group>

@@ -11,9 +11,6 @@ engines:
     enabled: true
   fixme:
     enabled: true
-  tslint:
-    enabled: true
-    channel: beta
 ratings:
   paths:
   - "**.tsx"

@@ -1,6 +1,5 @@
 # Gatsby 2.0 starter
 
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Build Status](https://travis-ci.org/fabien0102/gatsby-starter.svg?branch=master)](https://travis-ci.org/fabien0102/gatsby-starter)
 [![Build status](https://ci.appveyor.com/api/projects/status/k06pajqcm23lay1s/branch/master?svg=true)](https://ci.appveyor.com/project/fabien0102/gatsby-starter/branch/master)
 [![Code Climate](https://codeclimate.com/github/fabien0102/gatsby-starter/badges/gpa.svg)](https://codeclimate.com/github/fabien0102/gatsby-starter)
@@ -40,8 +39,7 @@ Run `npm run build` to create static site ready to host (`/public`)
 -   [x] Best practices tools
     -   [x] [Jest](https://facebook.github.io/jest/) / [Enzyme](http://airbnb.io/enzyme/)
     -   [x] [Storybook](https://storybooks.js.org/)
-    -   [x] [Typescript](https://www.typescriptlang.org/) / [tslint](https://palantir.github.io/tslint/)
-    -   [x] [xo linter](https://github.com/sindresorhus/xo)
+    -   [x] [Typescript](https://www.typescriptlang.org/) / [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
     -   [x] [Remark-lint](https://github.com/wooorm/remark-lint)
     -   [x] [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for autofix each commit
     -   [x] Travis/AppVeyor config (unix-osx-windows CI)
@@ -55,6 +53,7 @@ Run `npm run build` to create static site ready to host (`/public`)
 ## Files structure
 
      .
+     ├── .tsconfig.json                // typescript configuration
      ├── data                          // website data (included into graphQL)
      │   ├── author.json               // list of blog authors
      │   ├── avatars                   // authors avatars
@@ -83,8 +82,6 @@ Run `npm run build` to create static site ready to host (`/public`)
      │   └── templates                 // all templates (used for procedural page creation, see `gatsby-node.js`)
      ├── tools                         // miscs tools for dev
      │   └── update-post-date.js       // update post date hook
-     ├── tsconfig.json                 // typescript configuration
-     ├── tslint.json                   // tslint configuration
      └── package-lock.json             // npm lock file
 
 ## Plop generators - `npm run generate`

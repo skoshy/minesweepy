@@ -15,7 +15,7 @@ const AboutPage = () => {
       </Segment>
       <Segment vertical>
         <p>
-          This starter was created by @fabien0102.
+          This starter was created by @fabien0102 and extended by @skoshy.
         </p>
         <p>
           For any question, I'm on <a href="https://discord.gg/2bz8EzW" target="blank">discord #reactiflux/gatsby</a>

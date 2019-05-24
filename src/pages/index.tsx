@@ -3,15 +3,17 @@ import { Link } from "gatsby";
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 import { withLayout, LayoutProps, menuItems } from "../components/Layout";
 import {
-  Button,
   Segment,
   Container,
   Grid,
   Header,
-  Icon,
 } from "semantic-ui-react";
+import {
+  Button,
+  Icon,
+} from 'antd';
 
-const IndexPage = (props: LayoutProps) =>
+const IndexPage = (props: LayoutProps): JSX.Element =>
   <div>
     {/* Master head */}
     <Segment vertical inverted textAlign="center" className="masthead">
@@ -21,7 +23,7 @@ const IndexPage = (props: LayoutProps) =>
       <Container text>
         <Header inverted as="h1">Gatsby 2.0 - Starter kit</Header>
         <Header inverted as="h2">Typescript - Jest - Semantic UI</Header>
-        <Button primary size="huge">Get started!</Button>
+        <Button size="large">Get started!</Button>
       </Container>
     </Segment>
 
@@ -34,25 +36,24 @@ const IndexPage = (props: LayoutProps) =>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Porro laudantium ad, quae, perspiciatis ipsa distinctio.
-                </p>
+            </p>
             <Header>Dolor sit amet</Header>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Porro laudantium ad, quae, perspiciatis ipsa distinctio.
-                </p>
+            </p>
           </Grid.Column>
           <Grid.Column width="6" floated="right">
-            {/* TODO replace with a pretty GIF */}
             <Header>Lorem ipsum</Header>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Porro laudantium ad, quae, perspiciatis ipsa distinctio.
-                </p>
+            </p>
             <Header>Dolor sit amet</Header>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Porro laudantium ad, quae, perspiciatis ipsa distinctio.
-                </p>
+            </p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -64,39 +65,39 @@ const IndexPage = (props: LayoutProps) =>
         <Grid.Row>
           <Grid.Column>
             <Header icon>
-              <Icon name="wizard"></Icon>
+              <Icon type="wizard"></Icon>
               A kind of magic!
             </Header>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptas eaque at quae cupiditate aspernatur quibusdam!
-                  Distinctio quod non, harum dolorum earum molestias,
-                  beatae expedita aliquam dolorem asperiores nemo amet quaerat.
-                </p>
+              Voluptas eaque at quae cupiditate aspernatur quibusdam!
+              Distinctio quod non, harum dolorum earum molestias,
+              beatae expedita aliquam dolorem asperiores nemo amet quaerat.
+            </p>
           </Grid.Column>
           <Grid.Column>
             <Header icon>
-              <Icon name="wizard"></Icon>
+              <Icon type="wizard"></Icon>
               A kind of magic!
             </Header>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptas eaque at quae cupiditate aspernatur quibusdam!
-                  Distinctio quod non, harum dolorum earum molestias,
-                  beatae expedita aliquam dolorem asperiores nemo amet quaerat.
-                </p>
+              Voluptas eaque at quae cupiditate aspernatur quibusdam!
+              Distinctio quod non, harum dolorum earum molestias,
+              beatae expedita aliquam dolorem asperiores nemo amet quaerat.
+            </p>
           </Grid.Column>
           <Grid.Column>
             <Header icon>
-              <Icon name="wizard"></Icon>
+              <Icon type="wizard"></Icon>
               A kind of magic!
             </Header>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptas eaque at quae cupiditate aspernatur quibusdam!
-                  Distinctio quod non, harum dolorum earum molestias,
-                  beatae expedita aliquam dolorem asperiores nemo amet quaerat.
-                </p>
+              Voluptas eaque at quae cupiditate aspernatur quibusdam!
+              Distinctio quod non, harum dolorum earum molestias,
+              beatae expedita aliquam dolorem asperiores nemo amet quaerat.
+            </p>
           </Grid.Column>
         </Grid.Row>
       </Grid>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { get } from "lodash";
-import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
+import { Header, Container, Segment, Label, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import { DiscussionEmbed } from "disqus-react";
@@ -12,7 +12,7 @@ interface BlogPostProps extends LayoutProps {
   data: {
     post: MarkdownRemark;
     recents: MarkdownRemarkConnection;
-    site: Site
+    site: Site;
   };
 }
 
@@ -96,7 +96,7 @@ const BlogPostPage = (props: BlogPostProps) => {
         && props.data.site.siteMetadata
         && props.data.site.siteMetadata.disqus
         && <Segment vertical>
-            <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}}/>
+          <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}}/>
         </Segment>
       }
       <Segment vertical>

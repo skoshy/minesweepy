@@ -8,10 +8,10 @@
     "start": "gatsby develop -p 57301",
     "develop": "npm start",
     "build": "gatsby build",
-    "lint": "npm run lint:ts && npm run lint:md && npm run lint:js && npm run lint:css",
-    "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
+    "lint": "npm run lint:ts && npm run lint:md && npm run lint:css",
+    "lint:ts": "eslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
+    "lint:ts:fix": "npm run lint:ts -- --fix",
     "lint:md": "remark .",
-    "lint:js": "xo",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:scss": "stylelint src/**/*.scss --syntax scss",
     "test": "npm run lint && jest",
@@ -24,16 +24,16 @@
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.116",
+    "@types/lodash": "^4.14.132",
     "@types/reach__router": "^1.2.4",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
-    "@types/react-helmet": "5.0.0",
+    "@types/react-helmet": "^5.0.8",
     "@types/react-redux": "^5.0.21",
-    "@types/semantic-ui": "^2.2.6",
+    "@types/semantic-ui": "^2.2.7",
     "antd": "^3.18.2",
-    "babel-eslint": "^7.2.3",
-    "change-case": "^3.0.1",
+    "babel-eslint": "^10.0.1",
+    "change-case": "^3.1.0",
     "codeclimate-test-reporter": "^0.4.1",
     "disqus-react": "^1.0.5",
     "gatsby": "2.7.1",
@@ -43,8 +43,8 @@
     "gatsby-plugin-google-analytics": "2.0.20",
     "gatsby-plugin-manifest": "2.1.1",
     "gatsby-plugin-offline": "2.1.1",
-    "gatsby-plugin-sharp": "2.1.0",
-    "gatsby-plugin-typescript": "^2.0.0-rc.4",
+    "gatsby-plugin-sharp": "^2.1.1",
+    "gatsby-plugin-typescript": "^2.0.15",
     "gatsby-remark-autolink-headers": "2.0.16",
     "gatsby-remark-copy-linked-files": "2.0.12",
     "gatsby-remark-images": "3.0.12",
@@ -55,16 +55,17 @@
     "gatsby-transformer-sharp": "2.1.19",
     "graphql-code-generator": "^0.5.2",
     "gray-matter": "^2.1.1",
-    "lodash": "^4.17.4",
+    "lodash": "4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "5.2.1",
     "react-redux": "^5.0.7",
+    "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "semantic-ui-react": "^0.82.3",
+    "semantic-ui-react": "^0.87.1",
     "slash": "1.0.0",
     "ts-loader": "^2.3.7",
-    "typescript": "^2.8.0"
+    "typescript": "^3.4.5"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
@@ -74,40 +75,32 @@
     "@storybook/react": "^3.2.14",
     "@types/enzyme": "^2.8.9",
     "@types/jest": "^19.2.2",
-    "@types/node": "^7.0.15",
-    "@types/react-test-renderer": "^16.0.0",
     "@types/storybook__addon-actions": "^3.0.1",
     "@types/storybook__addon-knobs": "^3.2.0",
     "@types/storybook__addon-notes": "^3.0.1",
     "@types/storybook__addon-options": "^3.2.0",
     "@types/storybook__react": "^3.0.5",
-    "@types/webpack-env": "^1.13.1",
+    "@types/webpack-env": "^1.13.9",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
-    "eslint": "^4.1.1",
-    "eslint-config-react-app": "^3.0.5",
-    "eslint-config-xo-react": "0.11.1",
-    "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
     "flat": "^2.0.1",
     "husky": "0.13.3",
     "jest": "19.0.2",
     "lint-staged": "3.4.0",
     "mkdirp": "^0.5.1",
+    "npm": "^6.9.0",
     "plop": "^1.7.4",
     "raw-loader": "^0.5.1",
-    "react-addons-test-utils": "^15.5.1",
-    "react-test-renderer": "16",
     "remark-cli": "^3.0.1",
     "remark-preset-lint-recommended": "^2.0.0",
     "storybook-readme": "^3.0.6",
-    "stylelint": "^7.10.1",
-    "stylelint-config-standard": "^16.0.0",
-    "ts-jest": "19.0.8",
-    "ts-lint": "4.5.1",
-    "xo": "^0.18.1"
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "ts-jest": "19.0.8"
   },
   "keywords": [
     "gatsby",
@@ -141,11 +134,11 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "tslint --fix",
+      "eslint --fix",
       "git add"
     ],
     "*.{js,jsx}": [
-      "xo --fix",
+      "eslint --fix",
       "git add"
     ],
     "*.md": [
@@ -156,14 +149,6 @@
     "*.css": [
       "stylelint"
     ]
-  },
-  "xo": {
-    "extends": "xo-react/space",
-    "space": true,
-    "rules": {
-      "no-case-declarations": 0,
-      "default-case": 0
-    }
   },
   "remarkConfig": {
     "plugins": [
