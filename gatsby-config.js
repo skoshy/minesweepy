@@ -8,6 +8,7 @@ module.exports = {
     'MarkdownRemark.frontmatter.author': `AuthorJson`
   },
   plugins: [
+    'gatsby-plugin-antd',
     // Expose `/data` to graphQL layer
     {
       resolve: `gatsby-source-filesystem`,
