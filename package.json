@@ -2,7 +2,7 @@
   "name": "gatsby-starter",
   "version": "1.0.0",
   "description": "Gatsby 1.0 starter",
-  "author": "fabien0102 <fabien0102@gmail.com>",
+  "author": "skoshy <noreply@skoshy.com>",
   "license": "MIT",
   "scripts": {
     "start": "gatsby develop -p 57301",
@@ -133,11 +133,7 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{js,jsx}": [
+    "*.{ts,tsx,js,jsx}": [
       "eslint --fix",
       "git add"
     ],
